@@ -8,37 +8,37 @@ import org.openqa.selenium.support.FindBy;
 
 public class Home extends Base {
 
-    //1- mapeamentos de elementos
+    // 1 - Mapeamento de Elementos
     @FindBy(id = "search")
     private WebElement txtInputSearch;
 
     @FindBy(css = "button.button-search")
-     private WebElement btnSearch;
+    private WebElement btnSearch;
 
-    // 2- construtor
+    // 2 - Construtor
+
     public Home(WebDriver driver) {
         super(driver);
     }
 
-
-
-    // 3- açoes dos elementos
+    // 3 - Ações dos Elementos
 
     public void search(String product){
-        txtInputSearch.click();//clicar na caixa de pesquisa
-        txtInputSearch.clear(); //limpar ao conteudo da caixa de texto
-        txtInputSearch.sendKeys(product);// //escreve na caixa de texto
+        txtInputSearch.click(); // clicar na caixa de pesquisa
+        txtInputSearch.clear(); // limpar o conteúdo da caixa de texto
+        txtInputSearch.sendKeys(product); // escreve na caixa de texto
+    }
+    // Feature --> Steps --> searchWith...
 
-    }
     public void searchWithMagnifierButton(String product){
-        txtInputSearch.click();//clicar na caixa de pesquisa
-        txtInputSearch.clear(); //limpar ao conteudo da caixa de texto
-        txtInputSearch.sendKeys();// //escreve na caixa de texto
-        btnSearch.click();//clicar na lupa
+        search(product);
+        btnSearch.click(); // clicar no botão da lupa
     }
+
     public void searchWithEnter(String product){
         search(product);
         txtInputSearch.sendKeys(Keys.ENTER);
     }
+
 
 }
