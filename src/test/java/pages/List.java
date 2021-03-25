@@ -34,7 +34,4 @@ public class List extends Base {
     public void clickAtDesiredProduct(String product){
         driver.findElement(By.xpath("//h3[contains(text(),'" + product + "')]")).click();
     }
-
-
-
 }
